@@ -595,21 +595,104 @@ details[open] summary::after { transform: rotate(45deg); }
 }
 
 /* ============================================================
-   Responsive — Tablet & PC
+   Responsive — Tablet (768px+)
 ============================================================ */
 @media (min-width: 768px) {
   .section { padding: 80px 0; }
+  .section__title { font-size: 26px; }
+  .section__lead  { font-size: 15px; }
 
-  .hero__catch { font-size: 32px; }
-  .hero__logo  { width: 300px; }
-  .hero__subtitle { width: 340px; }
+  .hero__catch    { font-size: 36px; }
+  .hero__logo     { width: 300px; }
+  .hero__subtitle { width: 360px; }
+  .hero__scale    { font-size: 14px; }
 
-  .about__card-num { font-size: 34px; }
+  .about__card-num  { font-size: 34px; }
   .about__card-desc { font-size: 12px; }
 
   .safety__grid { grid-template-columns: repeat(4, 1fr); }
 
   .details__row dt { min-width: 96px; }
+}
 
-  .section__title { font-size: 26px; }
+/* ============================================================
+   Responsive — PC (1024px+)
+============================================================ */
+@media (min-width: 1024px) {
+  .container { max-width: 900px; }
+
+  .section { padding: 96px 0; }
+  .section__title { font-size: 30px; }
+
+  /* Hero */
+  .hero__content  { max-width: 640px; }
+  .hero__catch    { font-size: 42px; }
+  .hero__logo     { width: 340px; }
+  .hero__subtitle { width: 400px; }
+  .hero__date     { font-size: 24px; }
+  .hero__scale    { font-size: 15px; }
+  .deco--moon     { width: 80px; top: 40px; right: 60px; }
+  .deco--light-left  { width: 56px; }
+  .deco--light-right { width: 48px; }
+
+  /* About — 3カラムはそのまま、カード内を大きく */
+  .about__cards { gap: 24px; margin-bottom: 48px; }
+  .about__card  { padding: 28px 16px; }
+  .about__card-icon { font-size: 32px; }
+  .about__card-num  { font-size: 40px; }
+  .about__card-num span { font-size: 16px; }
+  .about__card-label { font-size: 13px; }
+  .about__card-desc  { font-size: 13px; }
+  .about__illust { max-width: 340px; }
+
+  /* Schedule — 2カラムレイアウト */
+  .schedule__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .schedule__arrow { display: none; }
+  .schedule__illust { max-width: 280px; }
+
+  /* Target — 2カラム */
+  .target__list li { font-size: 16px; }
+
+  /* Details — 横幅を活かして見やすく */
+  .details__row dt { min-width: 110px; font-size: 14px; }
+  .details__row dd { font-size: 16px; }
+  .details__row dd strong { font-size: 20px; }
+  .details__illust { max-width: 220px; }
+
+  /* Safety — 4カラムはそのまま、余白を増やす */
+  .safety__grid { gap: 20px; }
+  .safety__item { padding: 28px 18px; }
+  .safety__icon { font-size: 36px; }
+  .safety__item h3 { font-size: 15px; }
+  .safety__item p  { font-size: 13px; }
+
+  /* How To — 2カラム */
+  .howto__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 48px;
+  }
+  .howto__list::before { display: none; }
+  .howto__step { padding: 16px 0; }
+  .howto__body { padding: 16px 20px; }
+  .howto__body h3 { font-size: 15px; }
+  .howto__body p  { font-size: 14px; }
+
+  /* FAQ — 最大幅を広げる */
+  .faq__item summary { font-size: 15px; padding: 20px 20px; }
+  .faq__item p { font-size: 14px; }
+
+  /* Closing */
+  .closing__catch { font-size: 30px; }
+  .closing__date  { font-size: 22px; }
+  .closing__logo  { width: 260px; }
+  .closing__illust { max-width: 280px; }
+
+  /* Sticky CTA — PCでは幅を制限 */
+  .sticky-cta .btn { max-width: 360px; }
 }
