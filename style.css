@@ -185,6 +185,16 @@ a { text-decoration: none; }
   border-radius: 12px;
   padding: 8px 16px;
 }
+.hero__open {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--blue-dark);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
 .hero__note {
   margin-top: 10px;
   font-size: 12px;
@@ -554,7 +564,9 @@ details[open] summary::after { transform: rotate(45deg); }
   text-align: center;
 }
 .footer__org     { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.footer__org--support { font-size: 12px; font-weight: 400; color: rgba(255,255,255,.75); margin-bottom: 12px; }
 .footer__contact { font-size: 13px; margin-bottom: 16px; }
+.footer__contact a { color: rgba(255,255,255,.75); text-decoration: underline; }
 .footer__links {
   display: flex;
   gap: 8px;
