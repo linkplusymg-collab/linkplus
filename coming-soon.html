@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>周南ナイトリンク | Night LINK 2026.7.4</title>
+  <meta name="description" content="2026年7月4日（土）開催。周南初の大型マッチングイベント「周南ナイトリンク」。5月15日より申込受付スタート。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #0d1a2b;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .cs {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+    }
+
+    /* 背景画像 */
+    .cs__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .cs__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .cs__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 20, 40, 0.55) 0%,
+        rgba(10, 20, 40, 0.70) 100%
+      );
+    }
+
+    /* 装飾 */
+    .deco {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .deco--moon        { top: 4%;  right: 8%;  width: clamp(60px, 14vw, 110px); opacity: .9; }
+    .deco--light-left  { bottom: 0; left: 0;   width: clamp(80px, 22vw, 160px); opacity: .8; }
+    .deco--light-right { bottom: 0; right: 0;  width: clamp(80px, 22vw, 160px); opacity: .8; }
+    .deco--tree        { bottom: 0; left: 50%; transform: translateX(-50%); width: clamp(100px, 30vw, 200px); opacity: .6; }
+
+    /* コンテンツ */
+    .cs__content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .cs__logo {
+      width: clamp(200px, 60vw, 320px);
+      margin-bottom: 20px;
+    }
+    .cs__logo img { width: 100%; height: auto; }
+
+    .cs__badge {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.4);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: clamp(11px, 3vw, 14px);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      border-radius: 40px;
+      margin-bottom: 24px;
+    }
+
+    .cs__title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(32px, 10vw, 56px);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 16px rgba(0,0,0,.4);
+    }
+
+    .cs__catch {
+      font-size: clamp(13px, 3.5vw, 17px);
+      color: rgba(255,255,255,.85);
+      margin-bottom: 32px;
+      letter-spacing: 0.08em;
+    }
+
+    .cs__divider {
+      width: 40px;
+      height: 2px;
+      background: #F5C518;
+      border-radius: 2px;
+      margin: 0 auto 32px;
+    }
+
+    .cs__open {
+      background: #F5C518;
+      color: #2C4B6E;
+      font-size: clamp(14px, 4vw, 18px);
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(245, 197, 24, 0.4);
+    }
+
+    .cs__open-note {
+      font-size: clamp(11px, 3vw, 13px);
+      color: rgba(255,255,255,.7);
+      margin-bottom: 36px;
+    }
+
+    .cs__info {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 20px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 260px;
+    }
+    .cs__info-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: clamp(12px, 3.5vw, 14px);
+      color: rgba(255,255,255,.9);
+    }
+    .cs__info-label {
+      font-weight: 700;
+      color: #F5C518;
+      flex-shrink: 0;
+      font-size: clamp(11px, 3vw, 13px);
+    }
+
+    /* カウントダウン */
+    .cs__countdown {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+    .cs__count-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .cs__count-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(28px, 8vw, 44px);
+      font-weight: 700;
+      line-height: 1;
+      min-width: 2ch;
+      text-align: center;
+    }
+    .cs__count-label {
+      font-size: 10px;
+      color: rgba(255,255,255,.6);
+      letter-spacing: 0.05em;
+    }
+    .cs__count-sep {
+      font-size: clamp(24px, 7vw, 38px);
+      font-weight: 700;
+      align-self: flex-start;
+      padding-top: 4px;
+      color: rgba(255,255,255,.4);
+    }
+    .cs__countdown-note {
+      font-size: 12px;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 32px;
+    }
+
+    .cs__footer {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 11px;
+      color: rgba(255,255,255,.35);
+      z-index: 2;
+    }
+
+    @media (min-width: 640px) {
+      .cs__info { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 12px 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cs">
+    <div class="cs__bg">
+      <img src="assets/part1.jpg" alt="" aria-hidden="true">
+    </div>
+    <img src="assets/part_tsuki.png"  alt="" class="deco deco--moon"        aria-hidden="true">
+    <img src="assets/part_light1.png" alt="" class="deco deco--light-left"  aria-hidden="true">
+    <img src="assets/part_light2.png" alt="" class="deco deco--light-right" aria-hidden="true">
+    <img src="assets/part_tree.png"   alt="" class="deco deco--tree"        aria-hidden="true">
+
+    <div class="cs__content">
+      <div class="cs__logo">
+        <img src="assets/part_title.png" alt="周南ナイトリンク">
+      </div>
+
+      <span class="cs__badge">Coming Soon</span>
+
+      <p class="cs__catch">この夜が、はじまりになる。</p>
+      <div class="cs__divider"></div>
+
+      <div class="cs__countdown" id="countdown">
+        <div class="cs__count-unit">
+          <span class="cs__count-num" id="cd-days">--</span>
+          <span class="cs__count-label">DAYS</span>
+        </div>
+        <span class="cs__count-sep">:</span>
+        <div class="cs__count-unit">
+          <span class="cs__count-num" id="cd-hours">--</span>
+          <span class="cs__count-label">HOURS</span>
+        </div>
+        <span class="cs__count-sep">:</span>
+        <div class="cs__count-unit">
+          <span class="cs__count-num" id="cd-mins">--</span>
+          <span class="cs__count-label">MINS</span>
+        </div>
+        <span class="cs__count-sep">:</span>
+        <div class="cs__count-unit">
+          <span class="cs__count-num" id="cd-secs">--</span>
+          <span class="cs__count-label">SECS</span>
+        </div>
+      </div>
+      <p class="cs__countdown-note">申込受付スタートまで</p>
+
+      <p class="cs__open">5月15日（金）申込受付スタート！</p>
+      <p class="cs__open-note">公式LINEからお申し込みいただけます</p>
+
+      <div class="cs__info">
+        <div class="cs__info-row">
+          <span class="cs__info-label">開催日</span>
+          <span>2026年7月4日（土）17:00〜20:00</span>
+        </div>
+        <div class="cs__info-row">
+          <span class="cs__info-label">場所</span>
+          <span>徳山駅周辺 バー・居酒屋</span>
+        </div>
+        <div class="cs__info-row">
+          <span class="cs__info-label">対象</span>
+          <span>独身男女 20代〜30代　各100名</span>
+        </div>
+        <div class="cs__info-row">
+          <span class="cs__info-label">参加費</span>
+          <span>男性 9,000円 / 女性 6,000円（税込）</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="cs__footer">© 2026 株式会社LinkPlus</p>
+  </div>
+
+  <script>
+    const target = new Date('2026-05-15T00:00:00+09:00');
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function tick() {
+      const now = new Date();
+      const diff = target - now;
+
+      if (diff <= 0) {
+        location.replace('/');
+        return;
+      }
+
+      const days  = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins  = Math.floor((diff % 3600000)  / 60000);
+      const secs  = Math.floor((diff % 60000)    / 1000);
+
+      document.getElementById('cd-days').textContent  = days;
+      document.getElementById('cd-hours').textContent = pad(hours);
+      document.getElementById('cd-mins').textContent  = pad(mins);
+      document.getElementById('cd-secs').textContent  = pad(secs);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>
