@@ -197,6 +197,25 @@ a { text-decoration: none; }
   font-size: 12px;
   color: rgba(255,255,255,.85);
 }
+.hero__instagram {
+  display: inline-block;
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255,255,255,.4);
+  transition: background .2s;
+}
+.hero__instagram:hover { background: rgba(255,255,255,.30); }
+.hero__time {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-top: 4px;
+}
 
 /* ============================================================
    About
@@ -213,6 +232,14 @@ a { text-decoration: none; }
   padding: 20px 10px;
   text-align: center;
   box-shadow: var(--shadow);
+}
+.about__card-category {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue-mid);
+  letter-spacing: .08em;
+  margin-bottom: 8px;
+  text-transform: none;
 }
 .about__card-icon  { font-size: 26px; margin-bottom: 6px; }
 .about__card-num   {
