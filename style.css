@@ -785,6 +785,7 @@ a.venues__card:hover {
 
   /* Hero: デスクトップ – 全画面オーバーレイ */
   .hero {
+    display: flex;
     position: relative;
     min-height: 100svh;
     flex-direction: column;
@@ -792,11 +793,13 @@ a.venues__card:hover {
     justify-content: flex-end;
     overflow: hidden;
     padding: 0 20px 60px;
+    background: #000;
   }
   .hero__bg {
     position: absolute;
     inset: 0;
     width: 100%;
+    line-height: 0;
   }
   .hero__bg img {
     width: 100%;
@@ -805,6 +808,7 @@ a.venues__card:hover {
     object-position: center top;
   }
   .hero__bg::after {
+    display: block;
     background: linear-gradient(
       to bottom,
       rgba(0,0,0,0) 25%,
@@ -813,6 +817,8 @@ a.venues__card:hover {
     );
   }
   .hero__content {
+    position: relative;
+    z-index: 2;
     background: transparent;
     padding: 0;
     max-width: 480px;
